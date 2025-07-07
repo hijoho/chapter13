@@ -42,12 +42,11 @@ public class Hero {
         System.out.println(this.getName() + "は、眠って回復した！");
     }
     public void attack(Matango m) {
-        System.out.println(this.getName() + "の攻撃！");
+        System.out.println(this.name + "の攻撃！");
         System.out.println("お化けキノコ" + m.getSuffix() + "から100ポイントの反撃を受けた");
-        if (this.getHP()-100 <= 0) {
+        this.hp -= 100;
+        if (this.hp <= 0) {
             this.die();
-        }else{
-            this.setHP(this.getHP() - 100);
         }
     }
 }
